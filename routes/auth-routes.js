@@ -16,14 +16,16 @@ router.get('/logout', (req, res) => {
 
 
 // Auth with google 
-router.get('/google', passport.authenticate('google', {
-    scope: ['profile']
-}))
+router.get('/google', passport.authenticate('google', { 
+    scope: ['https://www.googleapis.com/auth/userinfo.profile',
+'https://www.googleapis.com/auth/userinfo.email'],
+accessType: 'offline', approvalPrompt: 'force' }));
 
 
 // Call back route for google to redirect to 
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send('you reached the callback URI')
+    // res.send(req.user);
+    res.redirect('/profile');
 })
 
 module.exports = router;

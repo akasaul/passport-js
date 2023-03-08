@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/akasaul/passport-js#readme",
   "dependencies": {
+    "cookie-session": "^2.0.0",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "passport": "^0.6.0",
+    "mongoose": "^7.0.1",
+    "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
